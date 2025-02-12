@@ -14,7 +14,7 @@ def graph_models():
     modelos_ordenados, media_acuracia_ordenada, media_f1_ordenada = zip(*sorted(
         zip(modelos, media_acuracia, media_f1), key=lambda x: x[1]))
 
-    fig, ax = plt.subplots(figsize=(16, 8))
+    fig, ax = plt.subplots(figsize=(12, 4))
 
     bar_width = 0.4
     indices = np.arange(len(modelos_ordenados))
