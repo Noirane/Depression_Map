@@ -20,7 +20,7 @@ def graph_models():
     indices = np.arange(len(modelos_ordenados))
 
     bars1 = ax.barh(indices - bar_width/2, media_acuracia_ordenada, bar_width, label='Acurácia', color='blue')
-    bars2 = ax.barh(indices + bar_width/2, media_f1_ordenada, bar_width, label='F1-Score', color='orange')
+    bars2 = ax.barh(indices + bar_width/2, media_f1_ordenada, bar_width, label='Medida-F1', color='orange')
 
     for bar in bars1:
         ax.text(bar.get_width() + 0.01, bar.get_y() + bar.get_height()/2, f'{bar.get_width():.4f}', va='center', fontsize=12)
