@@ -30,7 +30,7 @@ def graph_models():
     ax.set_yticks(indices)
     ax.set_yticklabels(modelos_ordenados)
     ax.set_xlabel("Média das Métricas")
-    ax.set_title("Comparação de Modelos - Acurácia vs F1-Score")
+    ax.set_title("Comparação dos Modelos - Acurácia vs F1-Score")
     ax.legend()
     ax.set_xlim(0, 1.2)
 
