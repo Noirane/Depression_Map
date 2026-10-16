@@ -5,11 +5,9 @@
 
 <br><br>
 
-# 🧠 DepressionMap
+<img src="assets/banner-en.png" alt="DepressionMap banner" width="100%">
 
 ### A System for Depression Indicators and Sociodemographic Data Analysis
-
-*Turning DASS-42 responses into visual, actionable mental-health indicators with data analysis and Machine Learning.*
 
 <br>
 
@@ -85,12 +83,10 @@ Gender, age, marital status and education vs. depression levels
 </tr>
 </table>
 
-<!-- 📸 Add screenshots of the app here, e.g.:
 <p align="center">
-  <img src="assets/heatmap.png" width="48%">
-  <img src="assets/gender-chart.png" width="48%">
+  <img src="assets/heatmap.png" alt="World heat map of average depression level" width="100%">
 </p>
--->
+<p align="center"><sub>🗺️ Heat map from the app: lighter = lower average depression, darker red = higher, gray = fewer than 30 respondents</sub></p>
 
 ---
 
@@ -119,13 +115,7 @@ The app has two pages:
 
 The depression score is the sum of **14 items** (Q3, Q5, Q10, Q13, Q16, Q17, Q21, Q24, Q26, Q31, Q34, Q37, Q38, Q42), each rated from **0** (*did not apply to me at all*) to **3** (*applied to me very much*).
 
-| Level | Score | |
-|:---:|:---:|:---:|
-| 0 · Normal | 0 – 9 | 🟢 |
-| 1 · Mild | 10 – 13 | 🟡 |
-| 2 · Moderate | 14 – 20 | 🟠 |
-| 3 · Severe | 21 – 27 | 🔴 |
-| 4 · Extremely Severe | 28+ | 🟣 |
+<p align="center"><img src="assets/dass-scale-en.png" alt="DASS-42 depression severity levels" width="100%"></p>
 
 ---
 
@@ -141,17 +131,20 @@ Public, anonymous dataset from [**Open Psychometrics**](https://openpsychometric
 4. Removed countries with **fewer than 30** respondents (Central Limit Theorem)
 5. Dropped rows with missing values and invalid ranges (adults 18–100 only)
 
-<div align="center">
-
-**39,775** raw rows ➜ **24,927** clean responses · **34** countries · **6** regions
-
-</div>
+<p align="center"><img src="assets/preprocessing-en.png" alt="Preprocessing: 39,775 raw responses to 24,927 clean responses" width="100%"></p>
 
 ---
 
 ## 🤖 Machine Learning Results
 
 **Setup:** One-Hot Encoding · Min-Max normalization · SMOTE balancing · 80/20 split · 10-Fold Cross-Validation · default hyperparameters
+
+<p align="center"><img src="assets/ml-results-en.png" alt="Accuracy of the 7 classifiers" width="100%"></p>
+
+<details>
+<summary><b>📋 Full metrics table</b></summary>
+
+<br>
 
 | Model | Accuracy | Precision | Recall | F1-score |
 |---|:---:|:---:|:---:|:---:|
@@ -162,6 +155,8 @@ Public, anonymous dataset from [**Open Psychometrics**](https://openpsychometric
 | Decision Tree | 0.8463 | 0.8462 | 0.8463 | 0.8461 |
 | Gaussian Naive Bayes | 0.6854 | 0.7350 | 0.6854 | 0.6866 |
 | AdaBoost | 0.4936 | 0.5946 | 0.4936 | 0.4359 |
+
+</details>
 
 **Statistical validation** (α = 0.05, via [Autorank](https://github.com/sherbold/autorank)): Shapiro-Wilk ➜ Bartlett ➜ Friedman ➜ Nemenyi post-hoc.
 Logistic Regression and SVM are **statistically equivalent** (p = 0.78 accuracy / 0.90 F1) and significantly better than Random Forest.
@@ -187,13 +182,17 @@ Logistic Regression and SVM are **statistically equivalent** (p = 0.78 accuracy 
 
 ## 🌍 Sociodemographic Insights
 
-| Group | Highest average | Lowest average |
-|---|---|---|
-| **Gender** | Other (2.56) | Male (2.04) |
-| **Age** | 18–34 (2.19) | 55+ (1.66) |
-| **Marital status** | Never married (2.22) | Married (1.60) |
-| **Education** | High school (2.28) | Postgraduate (1.91) |
-| **Region** | Africa (2.36) | Australia/New Zealand (2.16) |
+<p align="center"><img src="assets/sociodemographic-en.png" alt="Average depression level by gender, age, marital status, education and region" width="100%"></p>
+
+<details>
+<summary><b>🖥️ How the app shows it (gender example)</b></summary>
+
+<br>
+
+<p align="center"><img src="assets/gender-chart.png" alt="Gender distribution and depression levels in the app" width="85%"></p>
+<p align="center"><sub>Pie chart: share of participants per gender · Stacked bars: % of each depression level per group</sub></p>
+
+</details>
 
 > ⚠️ These figures describe this specific public sample (mostly Asian, female and young respondents) and **should not be generalized**. The focus of the work is the system's ability to produce indicators, not the findings themselves.
 
@@ -213,6 +212,15 @@ flowchart LR
     D --> H[🩺 Health team]
     H -->|contact, scheduling,<br>online/in-person care| P
 ```
+
+<details>
+<summary><b>🖼️ Original figure from the dissertation</b></summary>
+
+<br>
+
+<p align="center"><img src="assets/architecture-dissertation.png" alt="Current DepressionMap vs improved structure" width="70%"></p>
+
+</details>
 
 ---
 

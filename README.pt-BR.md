@@ -5,11 +5,9 @@
 
 <br><br>
 
-# 🧠 DepressionMap
+<img src="assets/banner-pt.png" alt="Banner do DepressionMap" width="100%">
 
 ### Um Sistema Para Indicadores de Depressão e Análise de Dados Sociodemográficos
-
-*Transformando respostas ao DASS-42 em indicadores visuais de saúde mental com análise de dados e Aprendizado de Máquina.*
 
 <br>
 
@@ -85,12 +83,10 @@ Gênero, idade, estado civil e escolaridade x níveis de depressão
 </tr>
 </table>
 
-<!-- 📸 Adicione aqui capturas de tela do app, por exemplo:
 <p align="center">
-  <img src="assets/heatmap.png" width="48%">
-  <img src="assets/gender-chart.png" width="48%">
+  <img src="assets/heatmap.png" alt="Mapa de calor mundial da média de depressão" width="100%">
 </p>
--->
+<p align="center"><sub>🗺️ Mapa de calor do app: tons claros = menor média de depressão, vermelho escuro = maior, cinza = menos de 30 participantes</sub></p>
 
 ---
 
@@ -119,13 +115,7 @@ O sistema possui duas páginas:
 
 A pontuação de depressão é a soma de **14 itens** (Q3, Q5, Q10, Q13, Q16, Q17, Q21, Q24, Q26, Q31, Q34, Q37, Q38, Q42), cada um avaliado de **0** (*não se aplica a mim de forma alguma*) a **3** (*aplica-se a mim muito, ou a maior parte do tempo*).
 
-| Nível | Pontuação | |
-|:---:|:---:|:---:|
-| 0 · Normal | 0 – 9 | 🟢 |
-| 1 · Leve | 10 – 13 | 🟡 |
-| 2 · Moderado | 14 – 20 | 🟠 |
-| 3 · Severo | 21 – 27 | 🔴 |
-| 4 · Extremamente Severo | 28+ | 🟣 |
+<p align="center"><img src="assets/dass-scale-pt.png" alt="Níveis de severidade da depressão no DASS-42" width="100%"></p>
 
 ---
 
@@ -141,17 +131,20 @@ Dataset público e anônimo do [**Open Psychometrics**](https://openpsychometric
 4. Remoção de países com **menos de 30** participantes (Teorema do Limite Central)
 5. Exclusão de linhas com valores ausentes ou fora dos intervalos válidos (apenas adultos de 18 a 100 anos)
 
-<div align="center">
-
-**39.775** linhas originais ➜ **24.927** respostas válidas · **34** países · **6** regiões
-
-</div>
+<p align="center"><img src="assets/preprocessing-pt.png" alt="Pré-processamento: de 39.775 para 24.927 respostas" width="100%"></p>
 
 ---
 
 ## 🤖 Resultados de Aprendizado de Máquina
 
 **Configuração:** One-Hot Encoding · Normalização Min-Max · Balanceamento com SMOTE · Divisão 80/20 · Validação Cruzada 10-Fold · Parâmetros padrão
+
+<p align="center"><img src="assets/ml-results-pt.png" alt="Acurácia dos 7 classificadores" width="100%"></p>
+
+<details>
+<summary><b>📋 Tabela completa de métricas</b></summary>
+
+<br>
 
 | Modelo | Acurácia | Precisão | Sensibilidade | Medida-F1 |
 |---|:---:|:---:|:---:|:---:|
@@ -162,6 +155,8 @@ Dataset público e anônimo do [**Open Psychometrics**](https://openpsychometric
 | Árvore de Decisão | 0,8463 | 0,8462 | 0,8463 | 0,8461 |
 | Gaussian Naive Bayes | 0,6854 | 0,7350 | 0,6854 | 0,6866 |
 | AdaBoost | 0,4936 | 0,5946 | 0,4936 | 0,4359 |
+
+</details>
 
 **Validação estatística** (α = 0,05, com [Autorank](https://github.com/sherbold/autorank)): Shapiro-Wilk ➜ Bartlett ➜ Friedman ➜ Post-Hoc de Nemenyi.
 Regressão Logística e SVM são **estatisticamente equivalentes** (p = 0,78 acurácia / 0,90 medida-F1) e significativamente superiores à Floresta Aleatória.
@@ -187,13 +182,17 @@ Regressão Logística e SVM são **estatisticamente equivalentes** (p = 0,78 acu
 
 ## 🌍 Análise Sociodemográfica
 
-| Variável | Maior média | Menor média |
-|---|---|---|
-| **Gênero** | Outro (2,56) | Masculino (2,04) |
-| **Idade** | 18–34 (2,19) | 55+ (1,66) |
-| **Estado civil** | Nunca casado (2,22) | Casado (1,60) |
-| **Escolaridade** | Ensino Médio (2,28) | Pós-Graduação (1,91) |
-| **Região** | África (2,36) | Austrália/Nova Zelândia (2,16) |
+<p align="center"><img src="assets/sociodemographic-pt.png" alt="Média do nível de depressão por gênero, idade, estado civil, escolaridade e região" width="100%"></p>
+
+<details>
+<summary><b>🖥️ Como o app mostra (exemplo: gênero)</b></summary>
+
+<br>
+
+<p align="center"><img src="assets/gender-chart.png" alt="Distribuição por gênero e níveis de depressão no app" width="85%"></p>
+<p align="center"><sub>Pizza: proporção de participantes por gênero · Barras empilhadas: % de cada nível de depressão por grupo</sub></p>
+
+</details>
 
 > ⚠️ Esses números descrevem esta amostra pública específica (majoritariamente asiática, feminina e jovem) e **não devem ser generalizados**. O foco do trabalho é a capacidade do sistema de gerar indicadores, e não os resultados em si.
 
@@ -213,6 +212,15 @@ flowchart LR
     D --> H[🩺 Equipe de saúde]
     H -->|contato, agendamento,<br>consulta online/presencial| P
 ```
+
+<details>
+<summary><b>🖼️ Figura original da dissertação</b></summary>
+
+<br>
+
+<p align="center"><img src="assets/architecture-dissertation.png" alt="DepressionMap atual x estrutura melhorada" width="70%"></p>
+
+</details>
 
 ---
 
