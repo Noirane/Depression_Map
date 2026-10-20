@@ -288,17 +288,7 @@ streamlit run app.py
 
 ---
 
-## 👩‍💻 Author
 
-<div align="center">
-
-**Noirane Getirana de Sá**<br>
-M.Sc. in Computer Science · Federal University of Sergipe (UFS)
-
-Advisor: **Prof. Dr. Gilton José Ferreira da Silva**<br>
-Examining board: Prof.ª Dr.ª Zenith Nara Costa Delabrida · Prof. Dr. Fábio Gomes Rocha
-
-<sub>Funded by FAPITEC-SE (Fundação de Apoio à Pesquisa e à Inovação Tecnológica do Estado de Sergipe)</sub>
 
 <br>
 
