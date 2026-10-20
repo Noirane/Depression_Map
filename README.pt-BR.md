@@ -288,19 +288,7 @@ streamlit run app.py
 
 ---
 
-## 👩‍💻 Autora
 
-<div align="center">
-
-**Noirane Getirana de Sá**<br>
-Mestre em Ciência da Computação · Universidade Federal de Sergipe (UFS)
-
-Orientador: **Prof. Dr. Gilton José Ferreira da Silva**<br>
-Banca: Prof.ª Dr.ª Zenith Nara Costa Delabrida · Prof. Dr. Fábio Gomes Rocha
-
-<sub>Bolsa concedida pela FAPITEC-SE (Fundação de Apoio à Pesquisa e à Inovação Tecnológica do Estado de Sergipe)</sub>
-
-<br>
 
 [![Acessar App](https://img.shields.io/badge/Acessar_o_DepressionMap-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://depression-map.streamlit.app/)
 
